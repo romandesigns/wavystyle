@@ -5,8 +5,8 @@ import { ThemeProvider } from "styled-components";
 import { AppRoot } from "./styles";
 // Misc
 import themes from "../../utils/styles/themes";
-import { GlobalStyles } from "../../utils/styles/global";
 import ThemePicker from "../ThemePicker";
+import { GlobalStyles } from "../../utils/styles/global";
 
 /**
  * @author
