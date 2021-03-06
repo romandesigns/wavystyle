@@ -6,13 +6,15 @@ import AppRoot from "./AppRoot";
 
 // Pages
 import Home from "../../pages/Home";
+import NotFound from "../../pages/NotFound";
 
 function App() {
   return (
     <Router>
       <AppRoot>
         <Switch>
-          <Route path="/" component={Home} />
+          <Route exact path="/" component={Home} />
+          <Route component={NotFound} />
         </Switch>
       </AppRoot>
     </Router>

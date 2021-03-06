@@ -4,32 +4,28 @@
   --tertiary: #fe8671;
   --light: #ffffff;
 
-  --silver-1: #fdfdfd;
-  --silver-2: #eaeaea;
-  --silver-3: #cccccc;
-  --silver-4: #cdcdcd;
-  --silver-5: #a8a8a8;
-  --silver-6: #9f9f9f;
-  --silver-7: #aba9ad;
-  --silver-8: #aba9ad;
-  --silver-9: #9e9e9e;
-  --silver-10: #686868;
-  --silver-11: #616161;
+  --btn-color: #3d3d3d;
 
-  --dark-1: #262626;
-  --dark-3: #3d3d3d;
-  --dark-4: #1c1c1c;
-  --dark-2: #151414;
-  --dark-5: #101010;
-  --dark-6: #0c0c0c;
-  --dark-7: #141414;
-  --dark-8: #1d1d1d;
-  --dark-9: #000000;
+  --dark-color: #9f9f9f;
+  --dark-navbar: #1d1d1d;
+  --dark-navbar-color: #9f9f9f;
+  --dark-hue-0: #141414;
+  --dark-hue-1: #1d1d1d;
+  --dark-hue-2: var(--dark-hue-0);
 
-  --primary-1: #4657b8;
-  --primary-2: #4e65e3;
-  --primary-3: #384592;
-  --primary-4: #263171;
+  --blue-color: var(--light);
+  --blue-navbar: #384592;
+  --blue-navbar-color: var(--light);
+  --blue-hue-0: #263171;
+  --blue-hue-1: #566deb;
+  --blue-hue-2: var(--blue-hue-0);
+
+  --light-color: #686868;
+  --light-navbar: #898989;
+  --light-navbar-color: var(--light);
+  --light-hue-0: var(--light-color);
+  --light-hue-1: #cdcdcd;
+  --light-hue-2: #d8d8d8;
 
   --radius: 3.5rem;
   --shadow: 0 5px 3px -4px rgba(0, 0, 0, 0.25);

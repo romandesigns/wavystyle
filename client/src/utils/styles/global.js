@@ -38,8 +38,9 @@ export const GlobalStyles = createGlobalStyle`
         box-sizing:border-box;
         font-size: var(--font-size);
         line-height:  var(--line-height);
-        font-family: var(--sans);  
-         background-color: ${({ theme }) => theme.active.bg_darker}
+        font-family: var(--sans);
+        color: ${({ theme }) => theme.active.color};
+         background-color: ${({ theme }) => theme.active.hue2}
     }
 
     section {}
