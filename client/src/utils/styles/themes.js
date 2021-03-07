@@ -1,8 +1,10 @@
 const Themes = {
   dark: {
+    palette: "dark",
     color: "var(--dark-color)",
     navbar: "var(--dark-navbar)",
     navbar_color: "var(--dark-navbar-color)",
+    bg: "var(--dark-bg)",
     hue1: "var(--dark-hue-0)",
     hue2: "var(--dark-hue-1)",
     hue3: "var(--dark-hue-2)",
@@ -10,9 +12,11 @@ const Themes = {
     bg_img_angled: "/img/png/bg-3d-img-dark.png",
   },
   blue: {
+    palette: "blue",
     color: "var(--blue-color)",
     navbar: "var(--blue-navbar)",
     navbar_color: "var(--blue-navbar-color)",
+    bg: "var(--blue-bg)",
     hue1: "var(--blue-hue-0)",
     hue2: "var(--blue-hue-1)",
     hue3: "var(--blue-hue-2)",
@@ -20,9 +24,11 @@ const Themes = {
     bg_img_angled: "/img/png/bg-3d-img-blue.png",
   },
   light: {
+    palette: "light",
     color: "var(--light-color)",
     navbar: "var(--light-navbar)",
     navbar_color: "var(--light-navbar-color)",
+    bg: "var(--light-bg)",
     hue1: "var(--light-hue-0)",
     hue2: "var(--light-hue-1)",
     hue3: "var(--light-hue-2)",
