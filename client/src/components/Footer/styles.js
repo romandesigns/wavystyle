@@ -6,7 +6,7 @@ export const FOOTER = styled.footer`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: ${({ theme }) => theme.active.navbar};
+  background-color: ${({ theme }) => theme.active.hue1};
   border-top-left-radius: var(--radius);
   border-top-right-radius: var(--radius);
   font-size: 1.3rem;
