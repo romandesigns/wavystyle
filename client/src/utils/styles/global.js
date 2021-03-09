@@ -18,12 +18,20 @@ export const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
         transition: background  var(--animation);
 
-    ${"" /* border: 1px solid green;    */}
+    ${"" /* border: 1px solid green;     */}
     }
 
     #root {
         height: 100%;
         width:100%;
+
+        height: inherit;
+        padding: 0 var(--padding);
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 8rem 1fr 4rem;
+        justify-content: center;
     }
 
     body {

@@ -70,6 +70,9 @@ export const Nav = styled.nav`
         right: 0;
         text-decoration: none;
       }
+      a.active {
+        text-decoration: underline;
+      }
     }
   }
 

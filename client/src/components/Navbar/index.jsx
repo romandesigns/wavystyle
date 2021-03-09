@@ -14,7 +14,7 @@ const Navbar = (props) => {
     <NAVBAR.Nav>
       <div>
         <Link to="/">
-          <img src="/logo512.png" />
+          <img src="/logo512.png" alt="brand logo" />
           <h1>WavyStyle</h1>
         </Link>
       </div>

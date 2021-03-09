@@ -1,17 +1,28 @@
 // Dependencies
 import React from "react";
 import ReactDOM from "react-dom";
+import reportWebVitals from "./reportWebVitals";
 // Styles
 import "./utils/styles/normalize.css";
 import "./utils/styles/style-variables.css";
 // Components
 import App from "./components/App";
+// Redux
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+import { composeWithDevTools } from "redux-devtools-extension";
+
+import rootReducer from "./redux/reducers";
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
+
 // Others
-import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );

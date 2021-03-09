@@ -2,11 +2,13 @@
 import React, { useEffect, useState } from "react";
 // Styled components
 import { ThemeProvider } from "styled-components";
-import { AppRoot } from "./styles";
 // Misc
 import themes from "../../utils/styles/themes";
 import ThemePicker from "../ThemePicker";
 import { GlobalStyles } from "../../utils/styles/global";
+
+import { useDispatch } from "react-redux";
+import { updateTheme } from "../../redux/actions/theme";
 
 /**
  * @author
@@ -14,34 +16,23 @@ import { GlobalStyles } from "../../utils/styles/global";
  **/
 
 const AppComponent = ({ children }) => {
-  const [themer, setThemer] = useState();
-  const ls = localStorage;
+  const [currentTheme, setCurrentTheme] = useState(localStorage.getItem("theme") || "blue");
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    if (ls.getItem("theme") === null) ls.setItem("theme", JSON.stringify("blue"));
-  });
-
-  useEffect(() => {
-    setThemer(JSON.parse(ls.getItem("theme")));
-  }, [ls]);
+    localStorage.setItem("theme", currentTheme);
+    dispatch(updateTheme(currentTheme));
+  }, [currentTheme, dispatch]);
 
   const getTheme = (value) => {
-    setThemer(value);
+    setCurrentTheme(value);
   };
 
-  useEffect(() => {
-    if (themer) {
-      ls.setItem("theme", JSON.stringify(themer));
-    }
-  }, [ls, themer]);
-
   return (
-    <ThemeProvider theme={{ active: themes[themer ? themer : "blue"] }}>
-      <AppRoot>
-        <GlobalStyles />
-        <ThemePicker setTheme={getTheme} activeTheme={themer} />
-        {children}
-      </AppRoot>
+    <ThemeProvider theme={{ active: themes[currentTheme] }}>
+      <GlobalStyles />
+      <ThemePicker setTheme={getTheme} activeTheme={currentTheme} />
+      {children}
     </ThemeProvider>
   );
 };
