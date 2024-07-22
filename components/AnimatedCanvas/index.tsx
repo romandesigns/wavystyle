@@ -2,14 +2,7 @@
 import React, { useRef, useEffect } from "react";
 import { ParticlesAnimation } from "@/classes/ParticlesAnimation";
 import useViewportState from "beautiful-react-hooks/useViewportState";
-
-interface ParticlesTypes {
-  bg_color_center: string;
-  bg_color_outer: string;
-  canvas_height: number;
-  canvas_width: number;
-  canvas: HTMLCanvasElement;
-}
+import { ParticlesTypes } from "@/type";
 
 export function Canvas() {
   const { width, height } = useViewportState();
