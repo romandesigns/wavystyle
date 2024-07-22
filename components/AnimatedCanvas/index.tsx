@@ -1,8 +1,8 @@
 "use client";
-import React, { useRef, useEffect } from "react";
 import { ParticlesAnimation } from "@/classes/ParticlesAnimation";
-import useViewportState from "beautiful-react-hooks/useViewportState";
 import { ParticlesTypes } from "@/type";
+import useViewportState from "beautiful-react-hooks/useViewportState";
+import { useEffect, useRef } from "react";
 
 export function Canvas() {
   const { width, height } = useViewportState();
@@ -10,7 +10,6 @@ export function Canvas() {
 
   useEffect(() => {
     if (!canvasRef.current) return;
-
     const options: ParticlesTypes = {
       bg_color_center: "#0d1227",
       bg_color_outer: "#05060f",
@@ -18,7 +17,7 @@ export function Canvas() {
       canvas_width: width,
       canvas: canvasRef.current,
     };
-    const canvasAnimation = new ParticlesAnimation(options);
+    new ParticlesAnimation(options);
   }, [width, height]);
 
   return <canvas ref={canvasRef} />;
