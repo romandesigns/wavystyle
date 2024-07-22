@@ -18,7 +18,7 @@ export class ParticlesAnimation {
   private init(props: ParticlesTypes) {
     if (!this.ctx) return;
     this.drawBackground(props.bg_color_center, props.bg_color_outer);
-    this.animate();
+    this.animate(props.bg_color_center, props.bg_color_outer);
   }
 
   private drawBackground(centerColor: string, outerColor: string) {
@@ -43,10 +43,10 @@ export class ParticlesAnimation {
     this.particles.push(particle);
   }
 
-  private animate() {
+  private animate(color_center: string, color_outer: string) {
     if (!this.ctx) return;
-    requestAnimationFrame(() => this.animate());
-    this.drawBackground("#090d1c", "#05060f"); // Redraw background to clear old frames
+    requestAnimationFrame(() => this.animate(color_center, color_outer));
+    this.drawBackground(color_center, color_outer);
 
     this.particles.forEach((particle, index) => {
       if (!particle.isAlive()) {
@@ -58,7 +58,6 @@ export class ParticlesAnimation {
     });
 
     if (Math.random() > 0.2) {
-      // Reduced spawn rate for a more peaceful animation
       this.spawnParticle();
     }
   }
