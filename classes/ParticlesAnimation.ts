@@ -24,7 +24,7 @@ export class ParticlesAnimation {
   private drawBackground(centerColor: string, outerColor: string) {
     if (!this.ctx) return;
     const x = this.canvas.width / 2;
-    const y = this.canvas.height / 2;
+    const y = this.canvas.height * 0.1;
     const radius = Math.max(this.canvas.width, this.canvas.height) / 2;
     const gradient = this.ctx.createRadialGradient(x, y, 0, x, y, radius);
     gradient.addColorStop(0, centerColor);
@@ -35,10 +35,9 @@ export class ParticlesAnimation {
 
   private spawnParticle() {
     const x = Math.random() * this.canvas.width;
-    const y = Math.random() * this.canvas.height; // Start just below the canvas
+    const y = Math.random() * this.canvas.height;
     const radius = Math.random() * 0.3 + 0.3;
-    const velocity = { y: Math.random() * 0.5 + 0.1 }; // Very gentle upward movement
-
+    const velocity = { y: Math.random() * 0.5 + 0.1 };
     const particle = new Particle(x, y, radius, velocity);
     this.particles.push(particle);
   }
