@@ -1,6 +1,12 @@
 export class ParticlesAnimation {
   private canvas: HTMLCanvasElement | null;
   private ctx: CanvasRenderingContext2D | undefined | null;
+  private radius: number = 10;
+  private particles: number = 10;
+  private x: number = 10;
+  private y: number = 10;
+  private dx: number = 10;
+  private dy: number = 10;
 
   constructor() {
     this.canvas = document.querySelector("canvas");
@@ -16,7 +22,7 @@ export class ParticlesAnimation {
 
   drawCircle() {
     this.ctx?.beginPath();
-    this.ctx?.arc(10, 10, 10, 0, Math.PI * 2, false);
+    this.ctx?.arc(this.x, this.x, this.radius, 0, Math.PI * 2, false);
     this.ctx?.fill();
   }
 
