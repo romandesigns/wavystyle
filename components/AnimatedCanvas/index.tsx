@@ -13,6 +13,7 @@ export function Canvas() {
     const options: ParticlesTypes = {
       bg_color_center: "#0d1227",
       bg_color_outer: "#05060f",
+      particle_color: "#ffffff",
       canvas_height: height,
       canvas_width: width,
       canvas: canvasRef.current,
