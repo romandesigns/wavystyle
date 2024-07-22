@@ -1,32 +1,40 @@
+interface ParticlesTypes {
+  bg_color_center: string;
+  bg_color_outer: string;
+  canvas_height: number;
+  canvas_width: number;
+  canvas: HTMLCanvasElement;
+}
+
 export class ParticlesAnimation {
-  private canvas: HTMLCanvasElement | null;
-  private ctx: CanvasRenderingContext2D | undefined | null;
-  private radius: number = 10;
-  private particles: number = 10;
-  private x: number = 10;
-  private y: number = 10;
-  private dx: number = 10;
-  private dy: number = 10;
+  private canvas: HTMLCanvasElement;
+  private ctx: CanvasRenderingContext2D | null;
 
-  constructor() {
-    this.canvas = document.querySelector("canvas");
-    if (!this.canvas) throw new Error("Canvas is required");
-    // Set canvas element and properties
-    this.canvas.width = 800;
-    this.canvas.height = 800;
-    this.canvas.style.border = "1px solid black";
-    this.ctx = this.canvas?.getContext("2d");
+  constructor(props: ParticlesTypes) {
+    this.canvas = props.canvas;
+    this.canvas.width = props.canvas_width;
+    this.canvas.height = props.canvas_height;
+    this.ctx = this.canvas.getContext("2d");
+    this.init(props);
   }
 
-  setCanvas() {}
-
-  drawCircle() {
-    this.ctx?.beginPath();
-    this.ctx?.arc(this.x, this.x, this.radius, 0, Math.PI * 2, false);
-    this.ctx?.fill();
+  private init(props: ParticlesTypes) {
+    if (!this.ctx) return;
+    this.drawBackground(props.bg_color_center, props.bg_color_outer);
   }
 
-  init() {
-    this.drawCircle();
+  private drawBackground(centerColor: string, outerColor: string) {
+    if (!this.ctx) return;
+
+    const x = this.canvas.width / 2;
+    const y = this.canvas.height / 2;
+    const radius = Math.max(this.canvas.width, this.canvas.height) / 2;
+    const gradient = this.ctx.createRadialGradient(x, y, 0, x, y, radius);
+
+    gradient.addColorStop(0, centerColor);
+    gradient.addColorStop(1, outerColor);
+
+    this.ctx.fillStyle = gradient;
+    this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
   }
 }
