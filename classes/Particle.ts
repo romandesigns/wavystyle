@@ -74,7 +74,6 @@ export class Particle {
   private slingshot() {
     const boost = 5;
     this.velocity.y = -boost * Math.cos(this.angle);
-    this.velocity.x = boost * Math.sin(this.angle);
     this.orbiting = false;
     this.orbitDuration = 0;
   }
