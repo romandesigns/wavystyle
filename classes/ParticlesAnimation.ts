@@ -5,6 +5,7 @@ export class ParticlesAnimation {
   private canvas: HTMLCanvasElement;
   private ctx: CanvasRenderingContext2D | null;
   private particles: Particle[] = [];
+  private animationFrameId: number | null = null;
   private mouseX: number = Infinity;
   private mouseY: number = Infinity;
   private mouseActive: boolean = false;
@@ -22,23 +23,29 @@ export class ParticlesAnimation {
   }
 
   private setupMouseHandlers() {
-    this.canvas.addEventListener("mousemove", (e) => {
-      this.mouseX = e.clientX;
-      this.mouseY = e.clientY;
-      this.mouseActive = true;
-    });
+    this.canvas.addEventListener("mousemove", this.handleMouseMove.bind(this));
+    this.canvas.addEventListener(
+      "mouseleave",
+      this.handleMouseLeave.bind(this)
+    );
+  }
 
-    this.canvas.addEventListener("mouseleave", () => {
-      this.mouseX = Infinity;
-      this.mouseY = Infinity;
-      this.mouseActive = false;
-    });
+  private handleMouseMove(e: MouseEvent) {
+    this.mouseX = e.clientX;
+    this.mouseY = e.clientY;
+    this.mouseActive = true;
+  }
+
+  private handleMouseLeave() {
+    this.mouseX = Infinity;
+    this.mouseY = Infinity;
+    this.mouseActive = false;
   }
 
   private init(props: ParticlesTypes) {
     if (!this.ctx) return;
     this.drawBackground(props.bg_color_center, props.bg_color_outer);
-    this.animate(props.bg_color_center, props.bg_color_outer);
+    this.animate();
   }
 
   private drawBackground(centerColor: string, outerColor: string) {
@@ -62,10 +69,9 @@ export class ParticlesAnimation {
     this.particles.push(particle);
   }
 
-  private animate(bg_color_center: string, bg_color_outer: string) {
-    if (!this.ctx) return;
-    requestAnimationFrame(() => this.animate(bg_color_center, bg_color_outer));
-    this.drawBackground(bg_color_center, bg_color_outer);
+  private animate() {
+    this.animationFrameId = requestAnimationFrame(() => this.animate());
+    this.drawBackground("#0d1227", "#05060f");
 
     this.particles.forEach((particle, index) => {
       if (!particle.isAlive()) {
@@ -79,5 +85,20 @@ export class ParticlesAnimation {
     if (Math.random() > 0.2) {
       this.spawnParticle();
     }
+  }
+
+  public stop() {
+    if (this.animationFrameId !== null) {
+      cancelAnimationFrame(this.animationFrameId);
+    }
+    // Remove event listeners to prevent memory leaks
+    this.canvas.removeEventListener(
+      "mousemove",
+      this.handleMouseMove.bind(this)
+    );
+    this.canvas.removeEventListener(
+      "mouseleave",
+      this.handleMouseLeave.bind(this)
+    );
   }
 }

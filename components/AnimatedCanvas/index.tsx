@@ -10,16 +10,27 @@ export function Canvas() {
 
   useEffect(() => {
     if (!canvasRef.current) return;
+    const canvas = canvasRef.current;
     const options: ParticlesTypes = {
       bg_color_center: "#0d1227",
       bg_color_outer: "#05060f",
       particle_color: "#ffffff",
       canvas_height: height,
       canvas_width: width,
-      canvas: canvasRef.current,
+      canvas: canvas,
     };
-    new ParticlesAnimation(options);
+    const animation = new ParticlesAnimation(options);
+    return () => {
+      animation.stop();
+    };
   }, [width, height]);
 
-  return <canvas ref={canvasRef} />;
+  return (
+    <>
+      <canvas
+        ref={canvasRef}
+        className="absolute top-0 left-0 w-full h-full -z-10"
+      />
+    </>
+  );
 }
