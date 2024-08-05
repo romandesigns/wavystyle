@@ -35,7 +35,7 @@ export default function Home() {
           </BlurFade>
           <BlurFade delay={0.3} duration={2.8} inView>
             <TypingAnimation
-              className="text-sm font-bold text-neutral-300 mb-8"
+              className="text-sm font-bold text-neutral-300 mb-8 px-6"
               text="A web developer and music production portfolio page."
             />
           </BlurFade>

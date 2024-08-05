@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/Providers/Theme";
 import { fontSans } from "@/components/FontFamily";
+import MainNavigation from "@/components/Navigation/MainNavigation";
 
 export const metadata: Metadata = {
   title: "WavyStyle | Home",
@@ -20,7 +21,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className="p-0 m-0 box-border">
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased relative flex items-center justify-center",
+          "min-h-screen bg-background font-sans antialiased relative grid grid-cols-1 grid-rows-[auto_1fr] items-center justify-center",
           fontSans.variable
         )}
       >
@@ -30,6 +31,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <MainNavigation />
           {children}
         </ThemeProvider>
       </body>
