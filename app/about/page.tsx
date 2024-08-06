@@ -1,12 +1,14 @@
 import Meteors from "@/components/magicui/meteors";
+import { Button } from "@/components/ui/button";
 import LottieAnimation from "@/lib/LottieAnimation";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function About() {
   return (
     <div className="container flex items-center justify-center max-w-5xl">
       <div className="relative">
-        <div className="absolute -top-10 sm:-top-14 sm:opacity-100 opacity-75 animate-wave-up-down z-[1] w-20 sm:w-48">
+        <div className="absolute -top-10 sm:-top-20 sm:opacity-100 opacity-75 animate-wave-up-down z-[1] w-20 sm:w-48">
           <Image
             src="/astronaut.svg"
             width={500}
@@ -14,7 +16,7 @@ export default function About() {
             alt="WavyStyle Logo"
           />
         </div>
-        <div className="bg-transparent relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg">
+        <div className="bg-transparent relative flex h-[500px] w-full flex-col items-start justify-center overflow-hidden rounded-lg">
           <Meteors number={30} />
           <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center font-semibold leading-none text-transparent">
             <div className="text-white [&_p]:mb-4  [&_p]:leading-relaxed [&_p]:font-normal [&_p]:text-xs text-left">
@@ -40,11 +42,22 @@ export default function About() {
               <p>Let&apos;s ride the wave together! 🌊✨</p>
             </div>
           </span>
+          <button className="my-4 rounded-md  bg-brand-warm">
+            <Link
+              href="/author"
+              className="p-2 px-4 block text-sm text-white font-medium"
+            >
+              Author&apos;s Page
+            </Link>
+          </button>
         </div>
-        <LottieAnimation
-          animationPath={"/flying-rocket.json"}
-          className="absolute -bottom-10 -right-10 w-20"
-        />
+        <div className="absolute -bottom-0 -right-10 -z-[1] opacity-20 md:opacity-15 ">
+          <div className="backdrop-blur-sm w-full h-full absolute z-[2] md:backdrop-blur-xs" />
+          <LottieAnimation
+            animationPath={"/flying-rocket.json"}
+            className="w-40"
+          />
+        </div>
       </div>
     </div>
   );
