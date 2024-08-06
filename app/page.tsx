@@ -21,10 +21,10 @@ export default function Home() {
             src={"/logo-dark.png"}
             height={400}
             width={400}
-            objectFit="contain"
             alt="WavyStyle Logo"
             placeholder="blur"
-            blurDataURL="/path/to/low-res-image.jpg"
+            blurDataURL="/logo-dark.png"
+            style={{ height: "auto" }}
           />
         </BlurFade>
         <div className="flex flex-col  items-center justify-center gap-4 text-center -translate-y-24">
@@ -45,7 +45,7 @@ export default function Home() {
                 ⏰ <hr className="mx-2 h-4 w-[1px] shrink-0 bg-gray-300" />
                 <span
                   className={cn(
-                    `inline animate-gradient bg-gradient-to-r  from-[#ecd026] via-[#26beef] to-[#ecd026]bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`
+                    `inline animate-gradient bg-gradient-to-r from-brand-warm via-brand-cool to-brand-warm bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`
                   )}
                 >
                   Coming Soon!

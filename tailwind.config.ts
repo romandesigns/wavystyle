@@ -21,7 +21,7 @@ const config = {
     extend: {
       backgroundImage: (theme) => ({
         "radial-gradient":
-          "radial-gradient(circle at center, #0d1227 0%, #05060f 100%)",
+          "radial-gradient(circle at center top, #0d1227 0%, #05060f 80%)",
       }),
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
@@ -30,6 +30,14 @@ const config = {
         dark: {
           outer: "#05060f",
           center: "#0d1227",
+        },
+        light: {
+          outer: "#f5f5f5",
+          center: "#f0f0f0",
+        },
+        brand: {
+          warm: "var(--accent-warm)",
+          cool: "var(--accent-cool)",
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -71,6 +79,14 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        meteor: {
+          "0%": { transform: "rotate(215deg) translateX(0)", opacity: "1" },
+          "70%": { opacity: "1" },
+          "100%": {
+            transform: "rotate(215deg) translateX(-500px)",
+            opacity: "0",
+          },
+        },
         blink: {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0" },
@@ -94,6 +110,7 @@ const config = {
         },
       },
       animation: {
+        meteor: "meteor 5s linear infinite",
         "wave-up-down": "wave-up-down 2s ease-in-out infinite 3.5s",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",

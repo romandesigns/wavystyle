@@ -24,6 +24,8 @@ export default function MainNavigation() {
               width={30}
               height={30}
               alt="wavystyle logo"
+              priority
+              style={{ height: "auto" }}
             />
           </Link>
           <span>|</span>
