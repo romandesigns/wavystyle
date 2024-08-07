@@ -5,12 +5,14 @@ import BlurFade from "@/components/magicui/blur-fade";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import TypingAnimation from "@/components/magicui/typing-animation";
+import MainNavigation from "@/components/Navigation/MainNavigation";
 
 export default function Home() {
   return (
-    <div className="">
+    <>
+      <MainNavigation />
       <Canvas />
-      <div className="flex flex-col items-center justify-center">
+      <main className="flex flex-col items-center justify-center">
         <BlurFade
           delay={3}
           duration={2.8}
@@ -54,7 +56,7 @@ export default function Home() {
             </BlurFade>
           </div>
         </div>
-      </div>
-    </div>
+      </main>
+    </>
   );
 }

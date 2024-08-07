@@ -79,6 +79,10 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(calc(-100% - var(--gap)))" },
+        },
         meteor: {
           "0%": { transform: "rotate(215deg) translateX(0)", opacity: "1" },
           "70%": { opacity: "1" },
@@ -110,6 +114,7 @@ const config = {
         },
       },
       animation: {
+        marquee: "marquee var(--duration) linear infinite",
         meteor: "meteor 5s linear infinite",
         "wave-up-down": "wave-up-down 2s ease-in-out infinite 3.5s",
         "accordion-down": "accordion-down 0.2s ease-out",

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaXTwitter, FaLinkedinIn } from "react-icons/fa6";
 
 const navigationLinks = [
   {
@@ -42,11 +42,18 @@ export default function MainNavigation() {
             ))}
           </ul>
         </div>
-        <div>
-          <a target="_blank" href="https://x.com/_wavystyle_">
-            <FaXTwitter />
-          </a>
-        </div>
+        <ul className="flex items-center gap-4">
+          <li>
+            <a target="_blank" href="https://x.com/_wavystyle_">
+              <FaXTwitter />
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="https://www.linkedin.com/in/roman-feliz">
+              <FaLinkedinIn />
+            </a>
+          </li>
+        </ul>
       </div>
     </nav>
   );
