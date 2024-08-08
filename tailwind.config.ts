@@ -1,5 +1,8 @@
 import type { Config } from "tailwindcss";
 import { fontFamily } from "tailwindcss/defaultTheme";
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
 
 const config = {
   darkMode: ["class"],
@@ -21,7 +24,7 @@ const config = {
     extend: {
       backgroundImage: (theme) => ({
         "radial-gradient":
-          "radial-gradient(circle at center top, #0d1227 0%, #05060f 80%)",
+          "radial-gradient(circle at center top, #13192e 0%, #05060f 80%)",
       }),
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
@@ -29,7 +32,7 @@ const config = {
       colors: {
         dark: {
           outer: "#05060f",
-          center: "#0d1227",
+          center: "#13192e",
         },
         light: {
           outer: "#f5f5f5",
@@ -79,6 +82,14 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        aurora: {
+          from: {
+            backgroundPosition: "50% 50%, 50% 50%",
+          },
+          to: {
+            backgroundPosition: "350% 50%, 350% 50%",
+          },
+        },
         marquee: {
           from: { transform: "translateX(0)" },
           to: { transform: "translateX(calc(-100% - var(--gap)))" },
@@ -114,6 +125,7 @@ const config = {
         },
       },
       animation: {
+        aurora: "aurora 60s linear infinite",
         marquee: "marquee var(--duration) linear infinite",
         meteor: "meteor 5s linear infinite",
         "wave-up-down": "wave-up-down 2s ease-in-out infinite 3.5s",
@@ -124,7 +136,18 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), addVariablesForColors],
 } satisfies Config;
+
+function addVariablesForColors({ addBase, theme }: any) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+
+  addBase({
+    ":root": newVars,
+  });
+}
 
 export default config;

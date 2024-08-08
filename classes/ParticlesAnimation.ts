@@ -71,7 +71,7 @@ export class ParticlesAnimation {
 
   private animate() {
     this.animationFrameId = requestAnimationFrame(() => this.animate());
-    this.drawBackground("#0d1227", "#05060f");
+    this.drawBackground("#13192e", "#05060f");
 
     this.particles.forEach((particle, index) => {
       if (!particle.isAlive()) {

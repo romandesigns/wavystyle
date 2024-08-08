@@ -6,6 +6,13 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import TypingAnimation from "@/components/magicui/typing-animation";
 import MainNavigation from "@/components/Navigation/MainNavigation";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "WavyStyle | Web Developer & Music Production Portfolio",
+  description:
+    "Discover Román Feliz's portfolio, a hub for his web development and music production projects.",
+};
 
 export default function Home() {
   return (

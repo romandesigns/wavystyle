@@ -1,15 +1,8 @@
-import type { Metadata } from "next";
 import "./globals.css";
 
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/Providers/Theme";
 import { fontSans } from "@/components/FontFamily";
-
-export const metadata: Metadata = {
-  title: "WavyStyle | Home",
-  description:
-    "Discover Román Feliz's portfolio, a hub for his web development and music production projects.",
-};
 
 export default function RootLayout({
   children,

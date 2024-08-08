@@ -42,7 +42,7 @@ export default function MainNavigation() {
             ))}
           </ul>
         </div>
-        <ul className="flex items-center gap-4">
+        <ul className="flex items-center gap-8">
           <li>
             <a target="_blank" href="https://x.com/_wavystyle_">
               <FaXTwitter />

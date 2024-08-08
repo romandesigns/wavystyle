@@ -4,6 +4,13 @@ import LottieAnimation from "@/lib/LottieAnimation";
 import Image from "next/image";
 import Link from "next/link";
 import MainNavigation from "@/components/Navigation/MainNavigation";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "WavyStyle | About Web Developer & Music Production Portfolio",
+  description:
+    "Catch the wave with Román Feliz's WavyStyle! Discover a unique blend of web development and music production, inspired by the rhythmic patterns of ocean waves. Explore innovative projects, emerging trends, and connect with like-minded enthusiasts.",
+};
 
 export default function About() {
   return (
@@ -48,7 +55,7 @@ export default function About() {
             <button className="my-4 rounded-md  bg-brand-warm">
               <Link
                 href="/author/roman"
-                className="p-2 px-4 block text-sm text-white font-medium"
+                className="p-2 px-4 block text-sm text-[#13192e] font-medium"
               >
                 Author&apos;s Page
               </Link>
