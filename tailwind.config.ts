@@ -123,8 +123,18 @@ const config = {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-10px)" },
         },
+        gradientText: {
+          "0%, 100%": { "background-position": "0% 50%" },
+          "50%": { "background-position": "100% 50%" },
+        },
+        gradientBorder: {
+          "0%, 100%": { "border-color": "from-brand-warm to-brand-cool" },
+          "50%": { "border-color": "to-brand-cool from-brand-warm" },
+        },
       },
       animation: {
+        "gradient-text": "gradientText 3s ease infinite",
+        "gradient-border": "gradientBorder 3s ease infinite",
         aurora: "aurora 60s linear infinite",
         marquee: "marquee var(--duration) linear infinite",
         meteor: "meteor 5s linear infinite",
