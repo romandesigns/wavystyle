@@ -1,10 +1,9 @@
+import PageLayout from "@/components/Layouts/PageLayout";
 import Meteors from "@/components/magicui/meteors";
-import { Button } from "@/components/ui/button";
 import LottieAnimation from "@/lib/LottieAnimation";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import MainNavigation from "@/components/Navigation/MainNavigation";
-import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "WavyStyle | About Web Developer & Music Production Portfolio",
@@ -14,8 +13,7 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <>
-      <MainNavigation />
+    <PageLayout>
       <main className="container flex items-center justify-center max-w-5xl">
         <div className="relative">
           <div className="absolute -top-10 sm:-top-20 sm:opacity-100 opacity-75 animate-wave-up-down z-[1] w-20 sm:w-48">
@@ -70,6 +68,6 @@ export default function About() {
           </div>
         </div>
       </main>
-    </>
+    </PageLayout>
   );
 }

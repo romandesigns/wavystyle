@@ -24,15 +24,15 @@ const config = {
     extend: {
       backgroundImage: (theme) => ({
         "radial-gradient":
-          "radial-gradient(circle at center top, #13192e 0%, #05060f 80%)",
+          "radial-gradient(circle at center top, var(--bg-outter) 0%, var(--bg-inner) 80%)",
       }),
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
       },
       colors: {
         dark: {
-          outer: "#05060f",
-          center: "#13192e",
+          outer: "var(--bg-inner)",
+          center: "var(--bg-outter)",
         },
         light: {
           outer: "#f5f5f5",

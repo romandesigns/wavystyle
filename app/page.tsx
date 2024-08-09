@@ -1,12 +1,11 @@
-import { Canvas } from "@/components/AnimatedCanvas";
 import { fontHandWritting } from "@/components/FontFamily";
+import PageLayout from "@/components/Layouts/PageLayout";
 import AnimatedGradientText from "@/components/magicui/animated-gradient-text";
 import BlurFade from "@/components/magicui/blur-fade";
-import { cn } from "@/lib/utils";
-import Image from "next/image";
 import TypingAnimation from "@/components/magicui/typing-animation";
-import MainNavigation from "@/components/Navigation/MainNavigation";
+import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "WavyStyle | Web Developer & Music Production Portfolio",
@@ -16,9 +15,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <>
-      <MainNavigation />
-      <Canvas />
+    <PageLayout showCanvas>
       <main className="flex flex-col items-center justify-center">
         <BlurFade
           delay={3}
@@ -64,6 +61,6 @@ export default function Home() {
           </div>
         </div>
       </main>
-    </>
+    </PageLayout>
   );
 }

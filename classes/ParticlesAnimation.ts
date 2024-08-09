@@ -52,10 +52,10 @@ export class ParticlesAnimation {
     if (!this.ctx) return;
     const x = this.canvas.width / 2;
     const y = this.canvas.height * 0.1;
-    const radius = Math.max(this.canvas.width, this.canvas.height) / 2;
+    const radius = Math.max(this.canvas.width, this.canvas.height);
     const gradient = this.ctx.createRadialGradient(x, y, 0, x, y, radius);
     gradient.addColorStop(0, centerColor);
-    gradient.addColorStop(1, outerColor);
+    gradient.addColorStop(0.5, outerColor);
     this.ctx.fillStyle = gradient;
     this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
   }

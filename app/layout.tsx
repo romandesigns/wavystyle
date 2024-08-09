@@ -13,7 +13,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className="p-0 m-0 box-border">
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased relative grid grid-cols-1 grid-rows-[auto_calc(100dvh-104px)] items-center justify-center bg-radial-gradient",
+          "min-h-screen bg-background font-sans antialiased relative grid grid-cols-1 grid-rows-[auto_calc(100dvh-5rem)] items-stretch justify-stretch bg-radial-gradient",
           fontSans.variable
         )}
       >
