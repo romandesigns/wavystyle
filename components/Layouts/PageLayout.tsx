@@ -21,7 +21,7 @@ const PageLayout = ({
   return (
     <>
       <MainNavigation />
-      {showAurora && <AuroraBackground className="-z-[1]" />}
+      {showAurora && <AuroraBackground className="z-[0]" />}
       {showCanvas && <Canvas />}
 
       {children}
@@ -30,13 +30,13 @@ const PageLayout = ({
           delay={3}
           duration={2.8}
           inView
-          className="animate-wave-up-down absolute bottom-10 left-1/2 transform -translate-x-1/2"
+          className="animate-wave-up-down absolute bottom-10 left-1/2 transform -translate-x-1/2 -z-[1]"
         >
           <Image
             className="opacity-65"
             src={"/logo-dark.png"}
-            height={700}
-            width={700}
+            height={600}
+            width={600}
             alt="WavyStyle Logo"
             placeholder="blur"
             blurDataURL="/logo-dark.png"
