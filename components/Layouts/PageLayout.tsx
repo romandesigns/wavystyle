@@ -30,7 +30,7 @@ const PageLayout = ({
           delay={3}
           duration={2.8}
           inView
-          className="animate-wave-up-down absolute bottom-0 left-1/2 transform -translate-x-1/2"
+          className="animate-wave-up-down absolute bottom-10 left-1/2 transform -translate-x-1/2"
         >
           <Image
             className="opacity-65"

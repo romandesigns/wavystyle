@@ -8,7 +8,7 @@ const secondRow = professionalToolKit.slice(professionalToolKit.length / 2);
 
 export const Toolkit = () => {
   return (
-    <article>
+    <article className="bg-[#0a0c20] rounded-lg">
       <div className="relative">
         <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm"></div>
         <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4"></div>

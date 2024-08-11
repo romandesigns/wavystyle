@@ -15,9 +15,9 @@ const navigationLinks = [
 
 export default function MainNavigation() {
   return (
-    <nav className="text-white flex items-center h-full">
+    <nav className="text-white flex items-center h-full w-full">
       <div className="container">
-        <div className=" flex justify-between items-center">
+        <div className="py-5 flex justify-between items-center">
           <div className="flex justify-start items-center gap-4">
             <Link href="/">
               <Image

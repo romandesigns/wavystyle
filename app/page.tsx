@@ -33,7 +33,7 @@ export default function Home() {
             style={{ height: "auto" }}
           />
         </BlurFade>
-        <div className="flex flex-col  items-center justify-center gap-4 text-center -translate-y-24">
+        <div className="flex flex-col items-center justify-center gap-4 text-center -translate-y-24">
           <BlurFade delay={0.8} duration={2.8} inView>
             <h1 className={`${fontHandWritting.className} text-4xl text-white`}>
               WavyStyle

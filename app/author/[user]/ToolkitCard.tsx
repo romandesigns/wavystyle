@@ -12,7 +12,7 @@ const ToolkitCard = ({
   return (
     <figure
       className={cn(
-        "relative w-auto cursor-pointer overflow-hidden rounded-xl border p-4 py-2",
+        "relative w-auto cursor-pointer overflow-hidden rounded-sm border p-4 py-2",
         // light styles
         "border-white/[.2] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
         // dark styles
