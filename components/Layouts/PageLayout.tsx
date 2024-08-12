@@ -21,7 +21,7 @@ const PageLayout = ({
   return (
     <>
       <MainNavigation />
-      {showAurora && <AuroraBackground className="z-[0]" />}
+      {showAurora && <AuroraBackground className="z-[0] opacity-50" />}
       {showCanvas && <Canvas />}
 
       {children}

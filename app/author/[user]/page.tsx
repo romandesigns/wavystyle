@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 const Author = ({ params: user }: { params: string }) => {
   return (
-    <PageLayout showAurora showCanvas showFloatingLogo>
+    <PageLayout showCanvas>
       <main className="relative h-full max-sm:py-10">
         <div className="container px-2 h-full grid grid-cols-1 grid-rows-1 items-center">
           <div>
