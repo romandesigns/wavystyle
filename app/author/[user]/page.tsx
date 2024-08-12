@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import { Toolkit } from "./Toolkit";
 
 import Avatar from "./Avatar";
-import CopyWriting from "./CopyWriting";
+import Description from "./Description";
 
 export const metadata: Metadata = {
   title:
@@ -14,13 +14,13 @@ export const metadata: Metadata = {
 
 const Author = ({ params: user }: { params: string }) => {
   return (
-    <PageLayout showCanvas>
+    <PageLayout showCanvas showFloatingLogo>
       <main className="relative h-full max-sm:py-10">
         <div className="container px-2 h-full grid grid-cols-1 grid-rows-1 items-center">
           <div>
             <section className="grid md:grid-cols-[1fr_35%] md:grid-rows-1 grid-rows-1 relative z-[2] gap-4">
               <Avatar />
-              <CopyWriting />
+              <Description />
             </section>
 
             <section className="mt-10 lg:mt-20 relative ">

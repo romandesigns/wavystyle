@@ -21,7 +21,7 @@ const PageLayout = ({
   return (
     <>
       <MainNavigation />
-      {showAurora && <AuroraBackground className="z-[0] opacity-50" />}
+      {showAurora && <AuroraBackground className="z-[0] opacity-45" />}
       {showCanvas && <Canvas />}
 
       {children}
@@ -30,7 +30,7 @@ const PageLayout = ({
           delay={3}
           duration={2.8}
           inView
-          className="animate-wave-up-down absolute bottom-10 left-1/2 transform -translate-x-1/2 -z-[1]"
+          className="animate-wave-up-down absolute top-0 left-1/4 transform -translate-x-1/2 -z-[1]"
         >
           <Image
             className="opacity-65"

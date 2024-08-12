@@ -3,7 +3,7 @@ import { Disciplines } from "./Disciplines";
 
 const CopyWriting = () => {
   return (
-    <article className="flex flex-col items-start sm:bg-[#0a0c20] p-6 rounded-lg relative overflow-hidden order-2 md:order-1">
+    <article className="flex flex-col items-start sm:bg-[#070816] p-6 rounded-lg relative overflow-hidden order-2 md:order-1">
       <div className="z-[1] w-full">
         <Disciplines />
         <h1 className="text-4xl sm:text-4xl text-white font-black relative animate-gradient-border max-w-2xl">
