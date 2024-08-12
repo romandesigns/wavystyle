@@ -24,7 +24,7 @@ const Author = ({ params: user }: { params: string }) => {
             </section>
 
             <section className="mt-10 lg:mt-20 relative ">
-              <h2 className="uppercase font-black text-xs text-brand-warm lg:text-xl lg:mb-4">
+              <h2 className="uppercase font-black text-xs text-brand-warm lg:text-2xl lg:mb-3">
                 Proffesional Toolkit
               </h2>
               <Toolkit />

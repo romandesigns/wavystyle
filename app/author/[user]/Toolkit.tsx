@@ -10,13 +10,13 @@ export const Toolkit = () => {
   return (
     <article className="bg-[#05060f] rounded-lg">
       <div className="relative">
-        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm"></div>
-        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4"></div>
-        <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[8px] w-1/4 blur-lg"></div>
-        <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4"></div>
-        <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
+        <div className="absolute inset-x-0 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm"></div>
+        <div className="absolute inset-x-0 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4"></div>
+        <div className="absolute inset-x-0 top-0 bg-gradient-to-r from-transparent via-[var(--accent-warm)] to-transparent h-[8px] w-1/4 blur-xl"></div>
+        <div className="absolute inset-x-0 top-0 bg-gradient-to-r from-transparent via-[var(--accent-warm)] to-transparent h-px w-2/4"></div>
+        <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_80%,white)]"></div>
       </div>
-      <div className="relative flex py-10  w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-[#13192e]/10 backdrop-filter text-white">
+      <div className="relative flex py-10  w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-[#05060f]/10 backdrop-filter text-white">
         <Marquee pauseOnHover className="[--duration:20s]">
           {firstRow.map((review) => (
             <ToolkitCard key={review.technology} {...review} />

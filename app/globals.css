@@ -123,8 +123,8 @@
     height: 2px;
     background: linear-gradient(
       to right,
-      #ecd026,
-      #00f2fe
+      var(--accent-warm),
+      var(--accent-cool)
     ); /* Gradient colors */
     border-radius: 50%; /* Gives it a wavy appearance */
     transform: rotate(
