@@ -106,3 +106,29 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .underline-wavy {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  .underline-wavy::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Adjust this value to move the underline closer or farther from the text */
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+      to right,
+      #ecd026,
+      #00f2fe
+    ); /* Gradient colors */
+    border-radius: 50%; /* Gives it a wavy appearance */
+    transform: rotate(
+      -2deg
+    ); /* Slightly rotates the underline to make it look wavy */
+  }
+}
