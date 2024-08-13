@@ -18,10 +18,15 @@ const CopyWriting = () => {
           <span className="underline-wavy">user experiences</span> and{" "}
           <span className="underline-wavy">intuitive UI</span> design.
         </h1>
-        <p className="text-neutral-400 italic  my-10 text-[0.8rem] max-w-lg  leading-relaxed">
+        <p
+          className="text-neutral-400 italic  my-10 text-[0.8rem] max-w-lg  leading-relaxed"
+          style={{ lineHeight: 1.5 }}
+        >
           I&apos;m always on the lookout for exciting projects and
-          collaborations. Whether you&apos;re a like-minded enthusiast or a
-          company seeking top-notch development skills, feel free to reach out!
+          collaborations. Are you a like-minded enthusiast or a company in need
+          of top-notch development skills? <br />
+          <br />
+          Let&apos;s connect—I&apos;d love to hear from you!
         </p>
         <button className="rounded-md bg-brand-cool w-full sm:w-2/6">
           <a
