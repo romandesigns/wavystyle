@@ -8,9 +8,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "WavyStyle | Web Developer & Music Production Portfolio",
+  title:
+    "WavyStyle | Román Feliz's Web Development & Music Production Portfolio",
   description:
-    "Discover Román Feliz's portfolio, a hub for his web development and music production projects.",
+    "Explore Román Feliz's WavyStyle portfolio, showcasing innovative web development and music production projects. Connect with a passionate developer and music producer.",
 };
 
 export default function Home() {

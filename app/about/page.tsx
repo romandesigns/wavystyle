@@ -6,9 +6,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "WavyStyle | About Web Developer & Music Production Portfolio",
+  title: "WavyStyle | About Román Feliz - Web Developer & Music Producer",
   description:
-    "Catch the wave with Román Feliz's WavyStyle! Discover a unique blend of web development and music production, inspired by the rhythmic patterns of ocean waves. Explore innovative projects, emerging trends, and connect with like-minded enthusiasts.",
+    "Explore WavyStyle by Román Feliz—a fusion of tech and music inspired by ocean waves. Dive into innovative projects and trends in web development and music production.",
 };
 
 export default function About() {

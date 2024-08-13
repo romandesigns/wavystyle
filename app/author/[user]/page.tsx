@@ -7,9 +7,9 @@ import Description from "./Description";
 
 export const metadata: Metadata = {
   title:
-    "WavyStyle | Román Feliz - Full Stack Developer, Designer &  Music Producer",
+    "WavyStyle | Román Feliz - Full Stack Developer, Designer & Music Producer",
   description:
-    "Explore WavyStyle by Román Feliz: a unique portfolio blending web development and music production. Discover innovative projects, tech trends, and creative compositions. Connect with a seasoned developer and music producer with over 8 years of experience.",
+    "Step into the world of Román Feliz at WavyStyle. A versatile Full Stack Developer, Designer, and Music Producer with over 8 years of experience, blending innovative web development with creative music production. Discover projects, trends, and connect with a passionate creator.",
 };
 
 const Author = ({ params: user }: { params: string }) => {
